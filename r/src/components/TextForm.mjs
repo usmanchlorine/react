@@ -23,6 +23,20 @@ export default function TextForm(props) {
     }
 
 
+    const handleCopyClick=(event)=>{
+        let element=document.getElementById('myBox');
+        element.select();
+        navigator.clipboard.writeText(element.value);
+    
+        
+
+    }
+
+
+    let my_style ={
+        color:props.mode==='dark'?'white':"black",
+        backgroundColor: props.mode==='dark'?'#2d2d30':"white",
+    }
 
     const [text, setText] = useState(''); // i have created a state variable 
 
@@ -34,13 +48,17 @@ export default function TextForm(props) {
                 <form>
                     <div className="mb-3">
                         <label htmlFor="myBox" className="form-label"><h1>{props.label}</h1></label>
-                        <textarea className="form-control" id="myBox" rows="7" value={text} onChange={handleOnChange}></textarea>
+                        <textarea className="form-control" id="myBox" rows="7" value={text} onChange={handleOnChange} style={my_style}></textarea>
                     </div>
                     <span className='m-2'>
                     <button type='button' className="btn btn-primary" onClick={handleUpClick}>UPPERCASE</button>
                     </span>
                     <span className='m-2'>
                     <button type='button' className="btn btn-primary" onClick={handleDownClick}>LOWERCASE</button>
+                    </span>
+
+                    <span className='m-2'>
+                    <button type='button' className="btn btn-primary" onClick={handleCopyClick}>COPYTEXT</button>
                     </span>
                   
                     
@@ -51,7 +69,7 @@ export default function TextForm(props) {
                 <h3>your text summary</h3>
                 <p>{text.length} your number of characters</p>
 
-                <p>{text.trim().split(" ").length} your number of words</p>
+                <p>{text.trim().split(" ").filter((element)=>{return element.length!==0;}).length} your number of words</p>
 
                 <p>{(text.trim().split(" ").length)*0.008} minutes are required to read this paragraph</p>
 

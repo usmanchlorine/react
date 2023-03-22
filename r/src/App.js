@@ -7,10 +7,7 @@ import './components/TextForm.mjs';
 import TextForm from './components/TextForm.mjs';
 import { useState } from 'react';
 import {
-  BrowserRouter,
-  RouterProvider,
   Route,
-  Link,
   Routes,
 } from "react-router-dom";
 
@@ -28,12 +25,14 @@ function App() {
       document.body.style.backgroundColor='#2d2d30';
       document.getElementById('root').style.backgroundColor='	#2d2d30';
       document.getElementById('root').style.color='white';
+      return 1;
     }
     else{
       setMode('light');
       document.body.style.backgroundColor='white';
       document.getElementById('root').style.backgroundColor='white';
       document.getElementById('root').style.color='black';
+      return 0;
     }
   
   }
@@ -46,8 +45,8 @@ function App() {
     
     
     <Routes >
-    <Route path='/' element={<TextForm label="Enter your text" id="hello"/>}/>
-    <Route path='/about' element={<About/>}/>
+    <Route path='/' element={<TextForm label="Enter your text" id="hello" mode={mode}/>}/>
+    <Route path='/about' element={<About mode={mode}/>}/>
     </Routes>
    
  
