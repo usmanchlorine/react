@@ -1,4 +1,4 @@
-import { SimpleGrid,Box,Flex,Text,Stack ,Image} from '@chakra-ui/react'
+import { SimpleGrid,Box,Flex,Text,Stack ,Image, Container} from '@chakra-ui/react'
 import { mix } from 'framer-motion'
 import React from 'react'
 
@@ -29,17 +29,19 @@ export default function Hero(props) {
         </Box>
         <Box height='80vh' style={themeStyle}>
 
-            <Flex direction={'column'} justifyContent={'center'} height={'80%'} pl={['10px','16px']} mx={3} >
-
+            
+            <Flex direction={'column'} justifyContent={'center'} height={'80%'} mx={4} >
+            <Container maxW={'container.md'}>
                 <Stack rowGap={[4,2,2]}>
-                  <Text fontSize={['5xl','4xl','5xl']} letterSpacing={'1px'}>Welcome To My World ! </Text>
-                  <Text fontSize={['3xl','3xl']} letterSpacing={'1px'}>Lets Build Something Great</Text>
+                  <Text fontSize={['5xl','5xl','6xl']} letterSpacing={'1px'} fontFamily='fasthand'>Welcome To My World ! </Text>
+                  <Text fontSize={['3xl','4xl']} letterSpacing={'1px'}>Lets Build Something Great</Text>
                   <Text fontSize={['2xl','lg','xl'] }>Sometimes it's the very people who no one imagines   anything of who do the things no one can imagine...</Text>
                 </Stack>
                 
-
+              </Container>
 
             </Flex>
+          
 
         </Box>
     </SimpleGrid>

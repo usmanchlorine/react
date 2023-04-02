@@ -9,7 +9,7 @@ export default function Navbar(props) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const themeStyle = {
         color: props.mode === 'light' ? 'black' : 'white',
-        backgroundColor: props.mode === 'light' ? 'white' : '#181D27',
+        backgroundColor: props.mode === 'light' ? 'white' : '#1D1D1D',
         textDecoration: 'none',
 
 

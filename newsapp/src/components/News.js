@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import NewsItem from './NewsItem'
+import Spinner from './Spinner';
+import PropTypes from 'prop-types'
 
 
 
-export default function News() {
+
+export default function News(prop) {
   const [data, setData] = useState([])
-  const [page,setPage] = useState(1)
+  const [page,setPage] = useState(prop.page)
+  const [loading, showLoading] = useState(true)
   let total_pages = 0;
 
 
   useEffect(() => {
     //Runs only on the first render
-     fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=4a72863ebe4a4279a35fb0733667932b&page=${page}`)
-      .then((response) => response.json())
-      .then((data) => setData(data.articles))
-      .catch((error) => console.error(error))
+    fetchdata();
    
   }, [page]); // useEFFECT aik hook jisme render hone kai baad yeh function chalaigha  iski jaga we can use componentDidMount also which is async function 
 
+  let fetchdata = async () =>{
+  
+    let response=await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${prop.category}&apiKey=4a72863ebe4a4279a35fb0733667932b&page=${page}`)
+    let parsedata=await response.json()
+    setData(parsedata.articles)
+    showLoading(false);
+      
+  }
 
 
 
@@ -46,8 +55,12 @@ export default function News() {
 
   return (
     <div className='container my-5'>
-      <h1>Top headlines</h1>
+      <h1>Top headlines - {prop.title} </h1>
       <br />
+      <div className='text-center'>
+      {loading && <Spinner/>}
+      </div>
+      
       <div className='row'>
         {data.map((object)=>{
              return(<div className="col-md-4 my-3 "  key={object.url} >
@@ -71,3 +84,6 @@ export default function News() {
     </div>
   )
 }
+News.defaultProps = {
+  category:'general'
+};

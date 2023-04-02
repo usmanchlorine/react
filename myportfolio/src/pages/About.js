@@ -1,4 +1,4 @@
-import { SimpleGrid, Box, Flex, Text, Stack, Image,Center,CircularProgress, VStack,List,ListItem} from '@chakra-ui/react'
+import { SimpleGrid, Box, Flex, Text, Stack, Image,Center,CircularProgress, VStack,List,ListItem, Container} from '@chakra-ui/react'
 import React from 'react'
 
 export default function About(props) {
@@ -19,13 +19,15 @@ export default function About(props) {
     textDecoration: 'none',
   }
   return (
-    <SimpleGrid columns={[1, 2, 2]} spacing='40px' margin={2} >
+    <Box backgroundImage={'/.png'}>
+    <Container  maxW={['800px','1200px','1360px']} p={['6','12']}  >
+    <SimpleGrid columns={[1, 1, 2]} spacing='40px' margin={2} >
       <Box height='80vh' style={themeStyle}>
 
         <Flex direction={'column'} justifyContent={'center'} height={'80%'} pl={['10px', '16px']} mx={10} >
 
           <Stack rowGap={[4, 2, 2]}>
-            <Text fontSize={['5xl', '4xl', '5xl']} letterSpacing={'1px'}>About me </Text>
+            <Text fontSize={['5xl', '4xl', '5xl']} letterSpacing={'1px'} fontFamily='fasthand'>ABOUT ME </Text>
             <Text fontSize={['3xl', '3xl']} letterSpacing={'1px'}>I help business to Grow </Text>
             <Text fontSize={['2xl', 'lg', 'xl']}>Using My Web Development Skills My skill Set Includes </Text>
         
@@ -45,7 +47,7 @@ export default function About(props) {
         </Flex>
 
       </Box>
-      <Box  minHeight={'fit-content'} style={themeStyle} >
+      <Box border={'black'} minHeight={'fit-content'} style={themeStyle} >
         <Text fontSize={['3xl', '3xl', '5xl']} align={'center'} display={'absolute'}>Skills</Text>
       
           
@@ -96,5 +98,7 @@ export default function About(props) {
       </Box>
 
     </SimpleGrid>
+    </Container>
+    </Box>
   )
 }
