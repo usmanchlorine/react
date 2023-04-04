@@ -19,16 +19,16 @@ export default function About(props) {
     textDecoration: 'none',
   }
   return (
-    <Box backgroundImage={'/.png'}>
-    <Container  maxW={['800px','1200px','1360px']} p={['6','12']}  >
-    <SimpleGrid columns={[1, 1, 2]} spacing='40px' margin={2} >
+  
+    <SimpleGrid columns={[1, 1, 2]} spacing='30px' margin={2} my={['36rem','16rem','12rem']} px={[null,'2rem','4rem']} >
+      
       <Box height='80vh' style={themeStyle}>
 
         <Flex direction={'column'} justifyContent={'center'} height={'80%'} pl={['10px', '16px']} mx={10} >
 
-          <Stack rowGap={[4, 2, 2]}>
-            <Text fontSize={['5xl', '4xl', '5xl']} letterSpacing={'1px'} fontFamily='fasthand'>ABOUT ME </Text>
-            <Text fontSize={['3xl', '3xl']} letterSpacing={'1px'}>I help business to Grow </Text>
+          <Stack rowGap={[2, 2, 2]}>
+            <Text fontSize={['3xl', '4xl', '5xl']} letterSpacing={'1px'} fontFamily='fasthand'>ABOUT ME </Text>
+            <Text fontSize={['2xl', '3xl']} letterSpacing={'1px'}>I help business to Grow </Text>
             <Text fontSize={['2xl', 'lg', 'xl']}>Using My Web Development Skills My skill Set Includes </Text>
         
               <List>
@@ -96,9 +96,9 @@ export default function About(props) {
 
        
       </Box>
-
+    
     </SimpleGrid>
-    </Container>
-    </Box>
+    
+  
   )
 }

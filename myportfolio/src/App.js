@@ -24,10 +24,13 @@ function App() {
   }
 
 
+
+
   return (
     <>
     
     <ChakraProvider>
+    
      <Navbar mode={mode} toggleMode={toggle_mode} />
      
       <Hero mode={mode}/>

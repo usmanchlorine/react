@@ -15,7 +15,7 @@ export default function Hero(props) {
       textDecoration: 'none',
   }
   return (
-    <SimpleGrid columns={[1,2,2]} spacing='40px' margin={0} >
+    <SimpleGrid columns={[1,1,2]} spacing='40px' margin={0}>
         <Box  height='80vh' style={{backgroundColor:'black'}} >
             <Flex justifyContent={'center'} alignItems={'center'} height={'100%'} >
                     <Image

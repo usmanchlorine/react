@@ -10,7 +10,7 @@ export default function NewsItem(props) {
             <h5 className="card-title">{title?title.slice(0,60)+"...":"title not mentioned"}</h5>
             <p className="card-text">{description?description.slice(0,60)+(description.length>88?"...":""):'descript not found'}</p>
             <p style={{color:'GrayText'}}><small>Author: {author?author:"unknown"} on {new Date(publishedAt).toDateString()}</small></p>
-            <a href={url?url:""} target="_blank" className="btn btn-light" style={{alignSelf:'end'}}>View more</a>
+            <a href={url?url:""} target="_blank" rel="noreferrer" className="btn btn-light" style={{alignSelf:'end'}}>View more</a>
         </div>
         </div>
        
