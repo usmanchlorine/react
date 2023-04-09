@@ -1,5 +1,5 @@
 const mongoos=require('mongoose')
-const mongooseURI="mongodb://0.0.0.0:27017/"
+const mongooseURI="mongodb://0.0.0.0:27017/easynotebook"
 
 
 const connectToMongo=()=>{
